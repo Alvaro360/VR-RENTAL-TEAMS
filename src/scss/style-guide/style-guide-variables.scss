@@ -1,0 +1,103 @@
+//colors
+$color-main1: #154472;
+$color-main2: #2FBF98;
+$color-minor1: #32B6C1;
+$color-minor2: #56C170;
+$color-minor3: #C16375;
+$color-minor4: #916DC1;
+$color-alert1: #CC614D;
+$color-alert2: #C69345;
+$color-darkgrey: #585858;
+$color-grey: #adbbc5;
+$color-lightgrey: #d3d8e3;
+$color-brown: #ae9999;
+$color-danger: #eb6157;
+$color-lightgrey-soft: #fbf9fb;
+$color-white: #fbf9fb;
+$color-black: black;
+$color-shadow: #888888;
+$color-pink-soft: #efc7ce;
+$color-pink-dark: #ce5d7d;
+$color-gold: #FFD700;
+$border-color: #cecece;
+
+//font-size
+$font-large: 28px;
+$font-big: 18px;
+$font-medium: 16px;
+$font-small: 14px;
+$font15: 15px;
+$font13: 13px;
+$font12: 12px;
+$font10: 10px;
+
+//font family
+$font-condensed: roboto-condensed, sans-serif;
+$font-italic: roboto-italic, sans-serif;
+$font-thin: roboto-thin, sans-serif;
+$font-thin-italic: roboto-thin-italic, sans-serif;
+$font-regular: roboto-regular, sans-serif;
+$font-condensed-italic: roboto-condensed-italic, sans-serif;
+$font-bold: roboto-bold, sans-serif;
+$font-bold-italic: roboto-bold-italic, sans-serif;
+$font-bold-condensed: roboto-bold-condensed, sans-serif;
+$font-bold-condensed-italic: roboto-bold-condensed-italic, sans-serif;
+$font-light: roboto-light, sans-serif;
+$font-light-italic: roboto-light-italic, sans-serif;
+$font-medium: roboto-medium, sans-serif;
+$font-medium-italic: roboto-medium-italic, sans-serif;
+$font-black-italic: roboto-black-italic, sans-serif;
+
+//margin
+$margin-none: 0;
+$margin-small: 8px; //0.42vw
+$margin-medium: 16px; //0.83vw
+$margin-large: 32px; //1.67vw
+
+//padding
+$pad-none: 0;
+$pad-small: 8px;
+$pad-medium: 16px;
+$pad-large: 32px;
+$pad-large-w: 1.7vw;
+$pad-large-h: 1.7vh;
+
+//shadow
+$shadow-large-radius: 12px;
+$shadow-medium-radius: 9px;
+$shadow-small-radius: 6px;
+
+//background
+$bg-content1: $color-lightgrey;
+$bg-content2: $color-lightgrey;
+$bg-panel: $color-white;
+$bg-darkbar: $color-black;
+$bg-darkmenu: $color-darkgrey;
+
+//border-radius
+$border-small-radius: 3px;
+
+//paragraphs
+$paragraph0: 0.75em;
+$paragraph1: 0.875em;
+$paragraph2: 1em;
+$paragraph3: 1.0625em;
+$paragraph4: 1.125em;
+$paragraph5: 1.25em;
+$paragraph6: 1.5em;
+
+$top-bar-height: 42px;
+$nav-sidebar-width: 280px;
+
+//breakpoints
+$media_breakpoints: (
+  xs: 575px,
+  sm: 767px,
+  md: 991px,
+  lg: 1199px,
+  xl: 1365px,
+  xxl: 1919px
+);
+
+//mobile
+$mob-icon-size: 22px;

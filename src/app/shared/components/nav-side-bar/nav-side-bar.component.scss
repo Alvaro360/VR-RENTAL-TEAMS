@@ -1,0 +1,40 @@
+body {
+  overflow-x: hidden;
+}
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  background: #131313;
+  /* Shadow/4dp */
+  box-shadow: 0px 4px 4px rgba(50, 50, 71, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.06);
+}
+
+.bg-light {
+  background-color: #1E1E1E !important;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  /* Color/Neutral/Body */
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

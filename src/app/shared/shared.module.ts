@@ -6,7 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {HttpAuthorizationInterceptor} from '@interceptors/http.interceptor';
 import {ToastrModule} from 'ngx-toastr';
-import { NavSideBarComponent } from './components/nav-side-bar/nav-side-bar.component';
+import {NavSideBarComponent} from './components/nav-side-bar/nav-side-bar.component';
 
 @NgModule({
   declarations: [NavSideBarComponent],
@@ -23,6 +23,9 @@ import { NavSideBarComponent } from './components/nav-side-bar/nav-side-bar.comp
       useClass: HttpAuthorizationInterceptor,
       multi: true
     }
+  ],
+  exports: [
+    NavSideBarComponent
   ]
 })
 export class SharedModule { }

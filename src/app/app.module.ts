@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { LoaderComponent } from './core/loader/loader.component';
 import {SharedModule} from '@shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {createTranslateLoader} from '@modules/core/config/i18n.config';
+import {HttpClient} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
