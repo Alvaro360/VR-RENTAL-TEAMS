@@ -1,25 +1,89 @@
-//colors
-$color-main1: #154472;
-$color-main2: #2FBF98;
-$color-minor1: #32B6C1;
-$color-minor2: #56C170;
-$color-minor3: #C16375;
-$color-minor4: #916DC1;
-$color-alert1: #CC614D;
-$color-alert2: #C69345;
-$color-darkgrey: #585858;
-$color-grey: #adbbc5;
-$color-lightgrey: #d3d8e3;
-$color-brown: #ae9999;
-$color-danger: #eb6157;
-$color-lightgrey-soft: #fbf9fb;
-$color-white: #fbf9fb;
-$color-black: black;
-$color-shadow: #888888;
-$color-pink-soft: #efc7ce;
-$color-pink-dark: #ce5d7d;
-$color-gold: #FFD700;
-$border-color: #cecece;
+//Primary colors
+$color-primary-vr: #d8303d;
+$color-primary-vr-2: #BA2935;
+$color-primary-vr-hover: #83232B;
+$color-primary-vr-light: #BA2935;
+$color-primary-vr-lightest: #FF90A2;
+$color-primary-vr-dark: #C11E2A;
+$color-primary-vr-darkest: #8F010C;
+
+//Salamence colors
+$color-accent-salamence: #3D93BF;
+$color-accent-salamence-light: #4DAEE0;
+$color-accent-salamence-lightest: #7BD1FD;
+$color-accent-salamence-dark: #2480AE;
+$color-accent-salamence-darkest: #124E6C;
+
+//Alert colors
+$color-alert-default: #FFC539;
+$color-alert-light: #FFC539;
+$color-alert-lightest: #FFE4A3;
+
+//Error colors
+$color-error-default: #ED2D4B;
+$color-error-light: #FF4965;
+$color-error-lightest: #FF788D;
+
+//Success colors
+$color-success-default: #00DB9C;
+$color-success-light: #75EAC8;
+$color-success-lightest: #B6F4E3;
+
+//Information colors
+$color-information-default: #00C7F1;
+$color-information-light: #41DCFD;
+$color-information-lightest: #9FE6F5;
+
+//Neutral colors
+$color-neutral-darkblack: #131313;
+$color-neutral-body: #1E1E1E;
+$color-neutral-light-body: #2A2A2A;
+$color-neutral-light-body-border: #373737;
+$color-neutral-darkgray: #4B4B4B;
+$color-neutral-gray: #BEBEBE;
+$color-neutral-gray-hover: #D3D3D3;
+$color-neutral-gray2: #E9E9E9;
+$color-neutral-gray3: #F2F2F2;
+$color-neutral-white: #FFFFFF;
+
+//Type colors
+$color-type-bug: #91C12F;
+$color-type-dark: #5A5465;
+$color-type-dragon: #0B6DC3;
+$color-type-electric: #F4D23C;
+$color-type-fairy: #EC8FE6;
+$color-type-fighting: #CE416B;
+$color-type-fire: #FF9D55;
+$color-type-flying: #B9D0FF;
+$color-type-ghost: #5269AD;
+$color-type-grass: #63BC5A;
+$color-type-ground: #D97845;
+$color-type-ice: #73CEC0;
+$color-type-normal: #919AA2;
+$color-type-poison: #AA6BC8;
+$color-type-psychic: #FA7179;
+$color-type-rock: #C5B78C;
+$color-type-steel: #5A8EA2;
+$color-type-water: #5090D6;
+
+$color-bg-type-bug: #9DCE8F;
+$color-bg-type-dark: #7C7C84;
+$color-bg-type-dragon: #63B3F9;
+$color-bg-type-electric: #FDD86A;
+$color-bg-type-fairy: #F8BCF4;
+$color-bg-type-fighting: #F96491;
+$color-bg-type-fire: #FFB47C;
+$color-bg-type-flying: #B9D0FF;
+$color-bg-type-ghost: #7D8FC3;
+$color-bg-type-grass: #A5EC9E;
+$color-bg-type-ground: #F5B898;
+$color-bg-type-ice: #A8EBE1;
+$color-bg-type-normal: #CCD2D8;
+$color-bg-type-poison: #DEAFF4;
+$color-bg-type-psychic: #FFB5B9;
+$color-bg-type-rock: #E5D9B1;
+$color-bg-type-steel: #88C5DD;
+$color-bg-type-water: #71B2F9;
 
 //font-size
 $font-large: 28px;
@@ -68,11 +132,7 @@ $shadow-medium-radius: 9px;
 $shadow-small-radius: 6px;
 
 //background
-$bg-content1: $color-lightgrey;
-$bg-content2: $color-lightgrey;
-$bg-panel: $color-white;
-$bg-darkbar: $color-black;
-$bg-darkmenu: $color-darkgrey;
+
 
 //border-radius
 $border-small-radius: 3px;
