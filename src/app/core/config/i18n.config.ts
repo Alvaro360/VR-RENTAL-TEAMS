@@ -38,10 +38,10 @@ export function getCurrentLocaleKeyShort(): string {
 }
 
 export function getCurrentLocaleKeyLong(): string {
-  const sinaLocaleLong = window['SINA'].acl.userProfile.culture;
-  if (!sinaLocaleLong) {
+  const vrLocaleLong = window['VictoryRoad'].acl.userProfile.culture;
+  if (!vrLocaleLong ) {
     return localeKeyLong.ENGB;
   }
 
-  return sinaLocaleLong;
+  return vrLocaleLong ;
 }

@@ -2,3 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import "~src/scss/style-guide/style-guide";
+
+.container {
+  margin-top: $top-bar-height
+}

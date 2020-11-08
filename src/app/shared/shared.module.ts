@@ -25,7 +25,9 @@ import {NavSideBarComponent} from './components/nav-side-bar/nav-side-bar.compon
     }
   ],
   exports: [
-    NavSideBarComponent
+    CoreModule,
+    TranslateModule,
+    NavSideBarComponent,
   ]
 })
 export class SharedModule { }

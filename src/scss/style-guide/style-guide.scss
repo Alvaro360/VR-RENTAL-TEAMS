@@ -1,0 +1,24 @@
+@import 'button';
+@import 'font-style';
+
+.pointer {
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  -webkit-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+  opacity: 0.4;
+}
+
+.readmode {
+  & > * {
+    pointer-events: none;
+    opacity: 1;
+
+    .disabled {
+      opacity: 1;
+    }
+  }
+}

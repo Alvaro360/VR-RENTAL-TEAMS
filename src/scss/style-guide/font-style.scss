@@ -1,0 +1,19 @@
+@import 'style-guide-variables';
+
+@font-face {
+  font-family: sf-pro-display-regular;
+  src: url(~src/assets/fonts/SFPRODISPLAY-family/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: sf-pro-display-bold;
+  src: url(~src/assets/fonts/SFPRODISPLAY-family/FontsFree-Net-SFProDisplay-Bold.ttf);
+}
+
+.sfpd-regular {
+  font-family: $sf-pd-regular
+}
+
+.sfpd-regular {
+  font-family: $sf-pd-bold
+}

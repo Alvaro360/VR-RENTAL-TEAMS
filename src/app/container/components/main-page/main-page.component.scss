@@ -1,3 +1,11 @@
+@import "~src/scss/style-guide/style-guide-variables";
+
+#wrapper {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+
 #page-content-wrapper {
   min-width: 100vw;
 }
@@ -15,3 +23,4 @@
     margin-left: -15rem;
   }
 }
+
