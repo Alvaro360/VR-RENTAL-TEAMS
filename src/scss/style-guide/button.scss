@@ -40,10 +40,27 @@ button, a {
       color: $color-neutral-white !important;
     }
 
+    &_main_login {
+      @extend .vr-button;
+      border-radius: 0.5em;
+      background-color: $color-primary-vr;
+      color: $color-neutral-white !important;
+      box-shadow: 0 0 6px 0 rgba(red, 100%);
+    }
+
     &_secondary {
       @extend .vr-button;
       background-color: lighten($color-neutral-white, 57%);
       color: $color-primary-vr !important;
+    }
+
+    &_secondary_login {
+      @extend .vr-button;
+      border-radius: 0.5em;
+      background-color: lighten($color-neutral-white, 57%);
+      color: $color-primary-vr !important;
+      border:none;
+      box-shadow: none;
     }
 
   }

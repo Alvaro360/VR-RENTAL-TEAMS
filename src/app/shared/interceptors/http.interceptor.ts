@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {LoaderService} from '@modules/core/services/loader.service';
 import {ApiService} from '@services/api.service';
+import {LoginService} from '@modules/login/services/login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ import {ApiService} from '@services/api.service';
 export class HttpAuthorizationInterceptor implements HttpInterceptor {
 
   constructor(private loaderService: LoaderService,
-              private apiService: ApiService) {}
+              private apiService: ApiService,
+              private translateService: TranslateService,
+              private loginService: LoginService) {}
 
   public intercept(request: HttpRequest<any>, handler: HttpHandler): Observable<HttpEvent<any>> {
     if (!request.url.startsWith('/')) {
@@ -23,7 +26,7 @@ export class HttpAuthorizationInterceptor implements HttpInterceptor {
     this.activateLoader(request);
     request = this.setBackUrl(request);
     request = this.setLanguage(request);
-    // request = this.setSecurity(request);
+    request = this.setSecurity(request);
 
     return handler.handle(request).pipe(
       map((event: HttpEvent<any>) => {
@@ -87,18 +90,20 @@ export class HttpAuthorizationInterceptor implements HttpInterceptor {
 
   setLanguage(request: HttpRequest<any>): HttpRequest<any> {
     if (request.method) {
-      // const language = this.translate.currentLang;
-      const params = request.params.set('lang', 'es');
+      const language = this.translateService.currentLang;
+      const params = request.params.set('lang', language);
       request = request.clone({params});
     }
 
     return request;
   }
 
-  /* setSecurity(request: HttpRequest<any>): HttpRequest<any> {
-    if (!request.url.includes('.pdf')) {
-      const headers = new HttpHeaders({'Authorization': 'Basic ' + this.loginService.getAuthorization()});
-      return request.clone({headers, withCredentials: true});
+  setSecurity(request: HttpRequest<any>): HttpRequest<any> {
+    if (!this.loginService.getAuthorization()) {
+      return request;
     }
-  }*/
+    console.log(this.loginService.getAuthorization());
+    const headers = new HttpHeaders({'Authorization': `Bearer ${this.loginService.getAuthorization()}`});
+    return request.clone({headers});
+  }
 }

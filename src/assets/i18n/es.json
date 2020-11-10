@@ -1,4 +1,8 @@
 {
   "VR_LOGIN": "Iniciar sesión",
-  "VR_REGISTER": "Registrarse"
+  "VR_REGISTER": "Registrarse",
+  "VR_WELCOME": "Bienvenido/a!",
+  "VR_CREATE_ACCOUNT": "Crear cuenta",
+  "VR_REMEMBER_ME": "Recordarme",
+  "VR_FORGOT_PASSWORD": "¿Olvidó su contraseña?"
 }

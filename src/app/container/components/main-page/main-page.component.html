@@ -1,12 +1,12 @@
-<div class="row min-vh-100 no-gutters d-flex flex-nowrap h-100 position-relative" id="wrapper" style="color:red">
+<div class="row min-vh-100 no-gutters d-flex flex-nowrap h-100 position-relative" id="wrapper">
   <app-nav-side-bar></app-nav-side-bar>
-  <div id="page-content-wrapper"style="background-image: url('assets/img/main_fondo.png'); background-size: cover; background-repeat: no-repeat; width: 100%;">
+  <div id="page-content-wrapper" style="background-image: url('assets/img/main_fondo.png'); background-size: cover; background-repeat: no-repeat; width: 100%;">
     <div class="col container">
       <div class="d-flex justify-content-end mr-5">
         <div class="mr-auto">
           <img class="img-fluid" src="assets/img/logo-vr.png">
         </div>
-        <button class="vr-button_secondary mr-3">{{'VR_LOGIN' | translate}}</button>
+        <button routerLink="/login" class="vr-button_secondary mr-3">{{'VR_LOGIN' | translate}}</button>
         <button class="vr-button_main">{{'VR_REGISTER' | translate}}</button>
       </div>
       <router-outlet></router-outlet>
