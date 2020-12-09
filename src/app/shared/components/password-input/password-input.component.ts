@@ -5,13 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './password-input.component.html',
   styleUrls: ['./password-input.component.scss']
 })
-export class PasswordInputComponent implements OnInit {
+export class PasswordInputComponent {
   fieldTextType: boolean;
-
+  // TODO Mover componente al módulo shared
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   toggleFieldTextType() {
     this.fieldTextType = !this.fieldTextType;
