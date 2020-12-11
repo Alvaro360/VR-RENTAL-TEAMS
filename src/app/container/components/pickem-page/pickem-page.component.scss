@@ -1,0 +1,182 @@
+@import "~src/scss/style-guide/style-guide-variables";
+
+.logo-cg {
+  height: 200px;
+}
+
+.vr-header {
+  z-index: 5;
+}
+
+.vr-title {
+  max-height: 200px;
+  padding: 20px 10px;
+}
+
+.vr-group-header {
+  background-color: $color-neutral-body ;
+  color: $color-neutral-white;
+  font-size: 20px;
+  text-align: center;
+  height: 43px;
+}
+
+.vr-main-container {
+  padding: 5% 10%;
+}
+
+.vr-buttons {
+  padding: 20px 10px;
+  z-index: 2;
+}
+
+.vr-background {
+  background-image: linear-gradient(#CACACA, white);
+}
+
+.vr-salamence {
+  color: white;
+  position: absolute;
+  top: -5%;
+  left: 85%;
+  z-index: 0;
+}
+
+.vr-tab {
+  color: white;
+  background-color: $color-primary-vr;
+  height: 42px;
+  border-radius: 21px;
+  border-color: transparent;
+}
+
+.vr-tabs {
+  background-color: white;
+  height: 42px;
+  border-radius: 21px;
+  width: max-content;
+}
+
+.vr-button {
+  height: 42px;
+  border-radius: 21px;
+}
+
+.vr-link {
+  color: white;
+}
+
+.nav-tabs {
+  border-bottom: 0 !important;
+}
+
+.nav-link.active {
+  border-radius: 21px;
+  border-color: white;
+}
+
+.nameText {
+  font-family: $sf-pd-regular;
+  font-size: 23px;
+}
+
+.card-body-pickem {
+  border-top: solid #D8303D 6px;
+  padding: 0 0.5em 0 0;
+  background: $color-neutral-gray3;
+  min-height: 68px;
+}
+
+.card-body-dialog {
+  border-top: solid #D8303D 6px;
+  background: $color-neutral-gray3;
+  min-height: 68px;
+}
+
+.ui-dropdown .ui-dropdown-trigger {
+  top: 10%;
+  position: absolute;
+  border-radius: 50%;
+  background: lightblue;
+  width: 24px;
+  height: 24px;
+}
+
+.primeroSpan {
+  font-family: $sf-pd-bold;
+  font-size: 25px;
+}
+
+.pi {
+  font-size: 15px;
+}
+
+.p-dropdown {
+  width: 100%;
+}
+
+.p-dropdown-trigger {
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 50%;
+  background:  $color-neutral-white;
+  width: 23px;
+  height: 23px;
+  top: 10%;
+  position: absolute;
+  right: 0;
+}
+
+.p-dropdown-label {
+  padding-left: 1em;
+}
+
+.foto {
+  max-height: 33px;
+  max-width: 33px;
+}
+
+.player-item {
+
+}
+
+.p-placeholder {
+  font-family: $sf-pd-regular;
+  font-size: 23px;
+}
+
+body .ui-widget-overlay {
+  background-color: #424242;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+.p-dialog .p-dialog-header-icons {
+  display: none;
+}
+
+.customDialog {
+  width: 25%;
+}
+.customDialog .pi {
+  display: none;
+}
+
+.ui-widget-overlay {
+  background-color: red;
+}
+
+.p-dialog, .p-dialog-mask.p-component-overlay {
+  pointer-events: auto;
+  background: rgb(150,150,150,0.8);
+}
+
+@media (max-width: map-get($media_breakpoints, sm)) {
+  .customDialog {
+    width: 80%;
+  }
+}
+

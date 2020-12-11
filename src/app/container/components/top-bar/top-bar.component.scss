@@ -1,0 +1,20 @@
+@import "~src/scss/style-guide/style-guide-variables";
+
+.logo-cg {
+  max-width: 244px;
+  max-height: 212px;
+}
+
+.vr-title {
+  padding: 1em;
+}
+
+.vr-title h1 {
+  font-family: $sf-pd-bold;
+  font-size: 50px;
+}
+
+.vr-title h2 {
+  font-family: $sf-pd-regular;
+  font-size: 35px;
+}

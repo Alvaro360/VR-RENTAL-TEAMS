@@ -29,12 +29,12 @@ export function initI18nConfig(localeKeyLongLanguage: string): void {
 }
 
 export function getCurrentLocaleKeyShort(): string {
-  const sinaLocaleLong = window['SINA'].acl.userProfile.culture;
-  if (!sinaLocaleLong) {
+  const vrLocaleLong = window['VictoryRoad'].acl.userProfile.culture;
+  if (!vrLocaleLong ) {
     return localeKeyShort.ENGB;
   }
 
-  return localeKeyLongToShort[sinaLocaleLong];
+  return localeKeyLongToShort[vrLocaleLong ];
 }
 
 export function getCurrentLocaleKeyLong(): string {

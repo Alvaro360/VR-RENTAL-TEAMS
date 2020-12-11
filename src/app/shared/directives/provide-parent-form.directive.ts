@@ -8,7 +8,7 @@ import {ControlContainer, NgForm} from '@angular/forms';
  */
 
 @Directive({
-  selector: '[siProvideParentForm]',
+  selector: '[vrProvideParentForm]',
   providers: [
     {
       provide: ControlContainer,

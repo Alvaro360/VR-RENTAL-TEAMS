@@ -1,0 +1,154 @@
+<div class="container">
+  <div>
+    <div class="row d-flex justify-content-center">
+      <button routerLink="/login" class="vr-button_secondary mr-3">
+        {{'VR_GROUP_STAGE' | translate}}
+      </button>
+      <button class="vr-button_main">
+        {{'VR_PLAY_OFFS' | translate}}
+      </button>
+    </div>
+  </div>
+  <div class="row mt-4 d-flex justify-content-center">
+    <span>
+      {{'VR_PICKEM_TEXT' | translate}}
+    </span>
+  </div>
+  <form>
+    <div class="row mt-2">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header vr-group-header">
+            <h5>
+              {{'VR_GROUP' | translate}} A
+            </h5>
+          </div>
+          <div class="card-body card-body-pickem d-flex align-items-center">
+            <p-dropdown [options]="countries"
+                        [(ngModel)]="selectedCountry"
+                        name="group1"
+                        optionLabel="name"
+                        placeholder="Select a Country"
+                        style="width: 100%"
+                        class="align-middle">
+              <ng-template pTemplate="selectedItem">
+                <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle">
+                    1º
+                  </span>
+                  <img class="img-fluid foto align-middle"
+                       src="assets/img/fotos/juanan.png"/>
+                  <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+                </div>
+              </ng-template>
+              <ng-template let-country pTemplate="item">
+                <div class="country-item" style="background: white">
+                  <div class="h-100">
+                    <img class="img-fluid foto align-middle"
+                         src="assets/img/fotos/juanan.png"/>
+                    <span class="nameText align-middle">
+                    {{country.value.name}}
+                  </span>
+                  </div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <h5 class="card-header vr-group-header">
+            {{'VR_GROUP' | translate}} B
+          </h5>
+          <div class="card-body card-body-pickem">
+            <p class="card-text">
+              Card content
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <h5 class="card-header vr-group-header">
+            {{'VR_GROUP' | translate}} C
+          </h5>
+          <div class="card-body card-body-pickem">
+            <p class="card-text">
+              Card content
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-md-4">
+        <div class="card">
+          <h5 class="card-header vr-group-header">
+            {{'VR_GROUP' | translate}} D
+          </h5>
+          <div class="card-body card-body-pickem">
+            <p class="card-text">
+              Card content
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <h5 class="card-header vr-group-header">
+            {{'VR_GROUP' | translate}} E
+          </h5>
+          <div class="card-body card-body-pickem">
+            <p class="card-text">
+              Card content
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <h5 class="card-header vr-group-header">
+            {{'VR_GROUP' | translate}} F
+          </h5>
+          <div class="card-body card-body-pickem">
+            <p class="card-text">
+              Card content
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3 d-flex justify-content-center">
+      <button class="vr-button_secondary"
+              (click)="sendPickEm()">
+        {{'VR_SEND' | translate}}
+      </button>
+    </div>
+  </form>
+</div>
+
+<p-dialog [(visible)]="dialogVisible"
+          modal="true"
+          appendTo="body"
+          styleClass="customDialog">
+  <div class="card">
+    <div class="card-header vr-group-header">
+    </div>
+    <div class="card-body card-body-dialog pt-2 pb-2">
+      <div style="text-align: center">
+        <h3 class="card-title">¡Pick'Em enviado!</h3>
+        <p class="card-text">¡Mantente al tanto de los resultados finales y de tu correo electrónico para saber si pasas o no a la siguiente fase!</p>
+      </div>
+      <div class="d-flex justify-content-center mt-1">
+        <button class="vr-button_secondary mr-3"
+                (click)="closeDialog()">
+          {{'VR_ACCEPT' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</p-dialog>

@@ -1,0 +1,124 @@
+@import '~src/scss/style-guide/style-guide-variables';
+
+.vr-check {
+  position: relative;
+  border: none;
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    border: none;
+
+    span {
+      font-family: $sf-pd-regular;
+    }
+
+    input[type='checkbox'] {
+      display: none;
+    }
+
+    input[type='checkbox']:checked ~ .vr-check_check {
+      background-size: cover;
+      background: url(~src/assets/img/check.png) no-repeat;
+      transition: background 0.25s linear;
+      -webkit-transition: background 0.25s linear;
+    }
+
+    .vr-check_check {
+      display: block;
+      // border: 2px solid rgba(0, 0, 0, .54);
+      border: 2px solid #F4F5F7;
+      border-radius: 2px;
+      background: white;
+      width: 16px;
+      height: 16px;
+      margin-left: 15px;
+      margin-right: 5px;
+      transition: background 0.25s linear;
+      -webkit-transition: background 0.25s linear;
+      box-sizing: content-box;
+    }
+
+    .vr-check_check_focus {
+      height: 30px;
+      width: 30px;
+      top: -6px;
+      left: -7px;
+      display: block;
+      position: absolute;
+      opacity: 0;
+      z-index: 0;
+      background-color: white;
+      border-radius: 100%;
+      box-sizing: content-box;
+    }
+
+    .vr-check_label {
+      margin-left: $margin-small;
+    }
+
+    &:focus-within {
+
+      .vr-check_check_focus {
+        -webkit-animation: onFocus 0.5s; /* Safari 4.0 - 8.0 */
+        animation: onFocus 0.5s;
+      }
+    }
+  }
+  label:focus {
+    outline: none;
+    border: 0;
+  }
+}
+
+:host-context(.readmode) .vr-check {
+
+  label {
+
+    span {
+      color: darken($color-neutral-gray, 20);
+    }
+
+    input[type='checkbox']:checked ~ .si-check_check {
+      border-color: $color-neutral-gray;
+      background-color: $color-neutral-gray;
+    }
+
+    .vr-check_check {
+      border-color: $color-neutral-gray;
+    }
+
+    .vr-check_check_focus {
+      background-color: $color-neutral-gray;
+    }
+  }
+}
+
+@keyframes onFocus {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: map-get($media_breakpoints, xl)) {
+
+  :host-context(.mobile) {
+
+    .vr-check {
+
+      label {
+
+        .vr-check_check {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

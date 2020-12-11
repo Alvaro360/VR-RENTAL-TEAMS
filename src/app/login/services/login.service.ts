@@ -66,9 +66,9 @@ export class LoginService {
   public setAuthorization(auth: string): void {
     this.authorization = auth;
     if (!auth) {
-      sessionStorage.removeItem(this.AUTHORIZATION_KEY);
+      localStorage.removeItem(this.AUTHORIZATION_KEY);
     } else {
-      sessionStorage.setItem(this.AUTHORIZATION_KEY, auth);
+      localStorage.setItem(this.AUTHORIZATION_KEY, auth);
     }
   }
 

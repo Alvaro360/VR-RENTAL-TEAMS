@@ -7,6 +7,8 @@ import {TranslateService} from '@ngx-translate/core';
 import {LoaderService} from '@modules/core/services/loader.service';
 import {ApiService} from '@services/api.service';
 import {LoginService} from '@modules/login/services/login.service';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
+import {ToastService} from '@services/toast.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,10 @@ export class HttpAuthorizationInterceptor implements HttpInterceptor {
   constructor(private loaderService: LoaderService,
               private apiService: ApiService,
               private translateService: TranslateService,
-              private loginService: LoginService) {}
+              private loginService: LoginService,
+              private router: Router,
+              private toastService: ToastService,
+  private toastr: ToastrService) {}
 
   public intercept(request: HttpRequest<any>, handler: HttpHandler): Observable<HttpEvent<any>> {
     if (!request.url.startsWith('/')) {
@@ -49,26 +54,30 @@ export class HttpAuthorizationInterceptor implements HttpInterceptor {
   }
 
   interceptErrorResponse(request: HttpRequest<any>, error: HttpErrorResponse): HttpErrorResponse {
-    /* switch (error.status) {
+    switch (error.status) {
       case 400:
-        this.toastService.error(error.error || error, RVB_ERROR_HTTP_${error.status});
+        this.toastService.error(error.error);
         break;
       case 401:
-        this.toastService.error(error.error || error, RVB_ERROR_HTTP_${error.status});
-        this.router.navigate['/login'];
+        if (!this.loginService.isLoggedIn()) {
+          this.toastService.error('VR_INVALID_CREDENTIALS');
+        } else {
+          this.loginService.logout();
+          this.router.navigate(['login']);
+        }
         break;
       case 404:
         this.loaderService.stop();
-        this.toastService.error(error.error || error, RVB_ERROR_HTTP_${error.status});
+        this.toastService.error(error.error);
         break;
       case 0:
-        this.toastService.error(error.message, RVB_ERROR_HTTP_${error.status});
+        this.toastService.error(error.message);
         break;
       default:
-        this.toastService.error(error.error || error, RVB_ERROR_HTTP_${error.status});
+        this.toastService.error(error.error );
     }
 
-    this.activateLoader(request, false);*/
+    this.activateLoader(request, false);
     return error;
   }
 
@@ -102,7 +111,7 @@ export class HttpAuthorizationInterceptor implements HttpInterceptor {
     if (!this.loginService.getAuthorization()) {
       return request;
     }
-    console.log(this.loginService.getAuthorization());
+
     const headers = new HttpHeaders({'Authorization': `Bearer ${this.loginService.getAuthorization()}`});
     return request.clone({headers});
   }

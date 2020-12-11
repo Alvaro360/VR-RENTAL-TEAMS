@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {MainPageComponent} from './components/main-page/main-page.component';
+import {PickemPageComponent} from '@modules/container/components/pickem-page/pickem-page.component';
 
 const routes: Routes = [{
   path: '',
@@ -10,10 +11,24 @@ const routes: Routes = [{
   children: [
     {
       path: '',
+      redirectTo: 'main',
+      pathMatch: 'full',
+    },
+    {
+      path: 'main',
       component: MainPageComponent,
       data: {
-        breadcrumb: null
-      }
+        breadcrumb: 'main'
+      },
+      children: [
+        {
+          path: 'pickem',
+          component: PickemPageComponent,
+          data: {
+            breadcrumb: null
+          }
+        }
+      ]
     }
   ]
 }];

@@ -1,0 +1,390 @@
+<div class="row min-vh-100 no-gutters d-flex flex-nowrap h-100 position-relative" id="wrapper">
+  <div id="page-content-wrapper" style="background-image: url('assets/img/pattern-vr-2020@2x.png'); background-size: cover; background-repeat: no-repeat; width: 100%;">
+    <div class="container d-flex justify-content-center h-100">
+      <ng-container>
+        <div class="row card">
+          <div class="card-body pl-5 pr-5">
+            <div class="row d-flex justify-content-start">
+              <h3 class="title">
+                <ng-container *ngIf="f1Visible">
+                  {{'VR_CREDENTIALS' | translate}}
+                </ng-container>
+                <ng-container *ngIf="f2Visible">
+                  {{'VR_PERSONAL_DATA' | translate}}
+                </ng-container>
+                <ng-container *ngIf="f3Visible">
+                  {{'VR_PUBLIC_INFORMATION' | translate}}
+                </ng-container>
+
+              </h3>
+            </div>
+            <ng-container *ngIf="f1Visible">
+              <form [formGroup]="registerForm1"
+                  (ngSubmit)="onSubmitF1()">
+              <div class="pl-3 pr-3">
+                <div class="form-group mt-3 credentials">
+                  <label for="email">
+                    {{'VR_EMAIL' | translate}}
+                  </label>
+                  <input id="email"
+                         type="email"
+                         formControlName="email"
+                         email="true"
+                         class="form-control"
+                         [ngClass]="{ 'is-invalid': submitted && f1.email.errors}"
+                         placeholder="example@example.com"/>
+                  <div *ngIf="submitted && f1.email.errors"
+                       class="invalid-feedback">
+                    <div *ngIf="f1.email.errors.required">
+                      {{'VR_USER_REQUIERED' | translate}}
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group credentials">
+                  <label for="password">
+                    {{'VR_PASSWORD' | translate}}
+                  </label>
+                  <div id="password"
+                       class="input-group">
+                    <input [type]="fieldTextType ? 'text' : 'password'"
+                           formControlName="password"
+                           class="form-control"
+                           placeholder=" {{'VR_PASSWORD' | translate}}"
+                           [ngClass]="{
+                           'is-invalid': submitted && f1.password.errors
+                           }"/>
+                    <div class="input-group-append">
+                      <span class="input-group-text span-eye">
+                        <i class="fa fa-eye-slash"
+                           [ngClass]="{
+                           'fa-eye-slash': !fieldTextType,
+                           'fa-eye': fieldTextType,
+                           'is-invalid': submitted && f1.password.errors
+                           }"
+                           (click)="toggleFieldTextType()">
+                        </i>
+                      </span>
+                    </div>
+                    <div *ngIf="submitted && f1.password.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f1.password.errors.required">
+                        {{'VR_PASS_REQUIRED' | translate}}
+                      </div>
+                      <div *ngIf="f1.password.errors.required">
+                        {{'VR_PASS_MIN_LENGTH_7' | translate}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group credentials">
+                  <label for="passwordConfirmed">
+                    {{'VR_CONFIRM_PASS' | translate}}
+                  </label>
+                  <div id="passwordConfirmed"
+                       class="input-group">
+                    <input [type]="fieldTextType ? 'text' : 'password'"
+                           formControlName="passwordConfirmed"
+                           class="form-control"
+                           placeholder=" {{'VR_PASSWORD' | translate}}"
+                           [ngClass]="{
+                           'is-invalid': submitted && f1.passwordConfirmed.errors
+                           }"/>
+                    <div class="input-group-append">
+                      <span class="input-group-text span-eye">
+                        <i class="fa fa-eye-slash"
+                           [ngClass]="{
+                           'fa-eye-slash': !fieldTextType,
+                           'fa-eye': fieldTextType,
+                           'is-invalid': submitted && f1.passwordConfirmed.errors
+                           }"
+                           (click)="toggleFieldTextType()">
+                        </i>
+                      </span>
+                    </div>
+                    <div *ngIf="submitted && f1.passwordConfirmed.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f1.passwordConfirmed.errors.required">
+                        {{'VR_PASS_REQUIRED' | translate}}
+                      </div>
+                      <div *ngIf="f1.passwordConfirmed.errors.minLength">
+                        {{'VR_PASS_MIN_LENGTH_7' | translate}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="d-flex justify-content-end mt-3">
+                  <button class="vr-button_secondary_login mr-auto"
+                          type="button"
+                          (click)="onCancelRegister()">
+                    {{'VR_CANCEL' | translate}}
+                  </button>
+                  <button [disabled]="loading"
+                          class="vr-button_main_login"
+                          type="submit">
+                    <span *ngIf="loading"
+                          class="spinner-border spinner-border-sm mr-1"></span>
+                    {{'VR_NEXT' | translate}}
+                  </button>
+                </div>
+              </div>
+            </form>
+            </ng-container>
+
+            <ng-container *ngIf="f2Visible">
+              <form [formGroup]="registerForm2"
+                    (ngSubmit)="onSubmitF2()">
+                <div class="pl-3 pr-3">
+                  <div class="form-group mt-3 credentials">
+                    <label for="firstName">
+                      {{'VR_FIRST_NAME' | translate}}
+                    </label>
+                    <input id="firstName"
+                           type="text"
+                           formControlName="firstName"
+                           class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f2.firstName.errors}"
+                           placeholder="example@example.com"/>
+                    <div *ngIf="submitted && f2.firstName.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f2.firstName.errors.required">
+                        {{'VR_REQUIRED' | translate}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3 credentials">
+                    <label for="lastName">
+                      {{'VR_LAST_NAME' | translate}}
+                    </label>
+                    <input id="lastName"
+                           type="text"
+                           formControlName="lastName"
+                           class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f2.lastName.errors}"
+                           placeholder="{{'VR_LAST_NAME' | translate}}"/>
+                    <div *ngIf="submitted && f2.lastName.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f2.lastName.errors.required">
+                        {{'VR_REQUIRED' | translate}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3 credentials">
+                    <label for="birthday">
+                      {{'VR_DATE_BIRTH' | translate}}
+                    </label>
+                    <input id="birthday"
+                           type="text"
+                           formControlName="birthday"
+                           class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f2.birthday.errors}"
+                           placeholder="{{'VR_LAST_NAME' | translate}}"/>
+                    <div *ngIf="submitted && f2.birthday.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f2.birthday.errors.required">
+                        {{'VR_REQUIRED' | translate}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group mt-3 credentials">
+                    <label>
+                      {{'VR_COUNTRY_RESIDENCY' | translate}}
+                    </label>
+                    <br/>
+                    <p-dropdown [options]="countries"
+                                styleClass="countrySelector"
+                                [(ngModel)]="selectedResidenceCountry"
+                                [formControlName]="'countryResidence'"
+                                optionLabel="name"
+                                [filter]="true"
+                                [resetFilterOnHide]="true"
+                                [virtualScroll]="true"
+                                [filterLocale]=""
+                                [itemSize]="5"
+                                placeholder="{{'VR_SELECT_COUNTRY_PLACEHOLDER' | translate}}">
+                      <ng-template pTemplate="selectedItem">
+                        <div *ngIf="selectedResidenceCountry">
+                          <div class="row d-flex"></div>
+                          <span [class]="'flag-icon flag-icon-' + selectedResidenceCountry.code?.toLowerCase()"></span>
+                          {{selectedResidenceCountry.name}}
+                        </div>
+                      </ng-template>
+                      <ng-template let-item pTemplate="item">
+                        <div style="background-color: white">
+                          <span [class]="'flag-icon flag-icon-' + item.value.code.toLowerCase()"></span>
+                          {{item.value.name}}
+                        </div>
+                      </ng-template>
+                    </p-dropdown>
+                    <div *ngIf="submitted && f2.countryResidence.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f2.countryResidence.errors.required">
+                        {{'VR_REQUIRED' | translate}}
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div>
+                  <div class="d-flex justify-content-end mt-3">
+                    <button class="vr-button_secondary_login mr-auto"
+                            type="button"
+                            (click)="onCancelRegister()">
+                      {{'VR_CANCEL' | translate}}
+                    </button>
+                    <button [disabled]="loading"
+                            class="vr-button_main_login"
+                            type="submit">
+                    <span *ngIf="loading"
+                          class="spinner-border spinner-border-sm mr-1"></span>
+                      {{'VR_NEXT' | translate}}
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </ng-container>
+
+            <!--<ng-container *ngIf="f3Visible">
+              <form [formGroup]="registerForm3"
+                    (ngSubmit)="onSubmitF3()">
+                <div class="pl-3 pr-3">
+                  <div class="form-group mt-3 credentials">
+                    <label for="email">
+                      {{'VR_EMAIL' | translate}}
+                    </label>
+                    <input id="email"
+                           type="email"
+                           formControlName="email"
+                           email="true"
+                           class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f1.email.errors}"
+                           placeholder="example@example.com"/>
+                    <div *ngIf="submitted && f1.email.errors"
+                         class="invalid-feedback">
+                      <div *ngIf="f1.email.errors.required">
+                        {{'VR_USER_REQUIERED' | translate}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group credentials">
+                    <label for="password">
+                      {{'VR_PASSWORD' | translate}}
+                    </label>
+                    <div id="password" class="input-group">
+                      <input [type]="fieldTextType ? 'text' : 'password'"
+                             formControlName="password"
+                             class="form-control"
+                             placeholder=" {{'VR_PASSWORD' | translate}}"
+                             [ngClass]="{
+                           'is-invalid': submitted && f1.password.errors
+                           }"/>
+                      <div class="input-group-append">
+                      <span class="input-group-text span-eye">
+                        <i class="fa fa-eye-slash"
+                           [ngClass]="{
+                           'fa-eye-slash': !fieldTextType,
+                           'fa-eye': fieldTextType,
+                           'is-invalid': submitted && f1.password.errors
+                           }"
+                           (click)="toggleFieldTextType()">
+                        </i>
+                      </span>
+                      </div>
+                      <div *ngIf="submitted && f1.password.errors"
+                           class="invalid-feedback">
+                        <div *ngIf="f1.password.errors.required">
+                          {{'VR_PASS_REQUIRED' | translate}}
+                        </div>
+                        <div *ngIf="f1.password.errors.required">
+                          {{'VR_PASS_MIN_LENGTH_7' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group credentials">
+                    <label for="passwordConfirmed">
+                      {{'VR_CONFIRM_PASS' | translate}}
+                    </label>
+                    <div id="passwordConfirmed" class="input-group">
+                      <input [type]="fieldTextType ? 'text' : 'password'"
+                             formControlName="passwordConfirmed"
+                             class="form-control"
+                             placeholder=" {{'VR_PASSWORD' | translate}}"
+                             [ngClass]="{
+                           'is-invalid': submitted && f1.passwordConfirmed.errors
+                           }"/>
+                      <div class="input-group-append">
+                      <span class="input-group-text span-eye">
+                        <i class="fa fa-eye-slash"
+                           [ngClass]="{
+                           'fa-eye-slash': !fieldTextType,
+                           'fa-eye': fieldTextType,
+                           'is-invalid': submitted && f1.passwordConfirmed.errors
+                           }"
+                           (click)="toggleFieldTextType()">
+                        </i>
+                      </span>
+                      </div>
+                      <div *ngIf="submitted && f1.passwordConfirmed.errors"
+                           class="invalid-feedback">
+                        <div *ngIf="f1.passwordConfirmed.errors.required">
+                          {{'VR_PASS_REQUIRED' | translate}}
+                        </div>
+                        <div *ngIf="f1.passwordConfirmed.errors.minLength">
+                          {{'VR_PASS_MIN_LENGTH_7' | translate}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-end mt-3">
+                    <button class="vr-button_secondary_login mr-auto"
+                            type="button"
+                            (click)="onCancelRegister()">
+                      {{'VR_CANCEL' | translate}}
+                    </button>
+                    <button [disabled]="loading"
+                            class="vr-button_main_login"
+                            type="submit">
+                    <span *ngIf="loading"
+                          class="spinner-border spinner-border-sm mr-1"></span>
+                      {{'VR_NEXT' | translate}}
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </ng-container>-->
+
+
+          </div>
+          <div class="card-footer">
+            <p-dropdown [options]="languages"
+                        [(ngModel)]="selectedLanguage"
+                        optionLabel="name"
+                        (onChange)="changeLanguage()">
+              <ng-template pTemplate="selectedItem">
+                <div *ngIf="selectedLanguage">
+                  <div class="row d-flex"></div>
+                  <span [class]="'flag-icon flag-icon-' + selectedLanguage.code?.toLowerCase()"></span>
+                  {{selectedLanguage.name}}
+                </div>
+              </ng-template>
+              <ng-template let-item pTemplate="item">
+                <div style="background-color: white">
+                  <span [class]="'flag-icon flag-icon-' + item.value.code.toLowerCase()"></span>
+                  {{item.value.name}}
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="vr-check {{class}}" [class.disabled]="disabled" vrProvideParentForm>
+  <label for="vr-check-{{id}}" [tabindex]="disabled ? '-1' : '0'">
+    <input type="checkbox"
+           id="vr-check-{{id}}"
+           name="{{name}}"
+           [ngModel]="model"
+           (ngModelChange)="onChangeModel($event)">
+    <div class="vr-check_check"></div>
+    <div class="vr-check_check_focus"></div>
+    <span *ngIf="text"
+          class="vr-check_label"
+          [translate]="text"
+    ></span>
+  </label>
+</div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {TranslateModule} from '@ngx-translate/core';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 
@@ -10,7 +11,11 @@ import {TranslateModule} from '@ngx-translate/core';
   imports: [
     CommonModule,
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
+    CheckboxModule
+  ],
+  exports: [
+    CheckboxModule
   ]
 })
 export class CoreModule { }

@@ -1,0 +1,36 @@
+@import "~src/scss/style-guide/style-guide-variables";
+@import "~src/scss/style-guide/login-register";
+
+select:focus {
+  outline: none;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.countrySelector {
+  width: 100%;
+  outline: none;
+  background: white;
+  border-color: #F4F5F7;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.countrySelector .p-dropdown-header {
+  border: none;
+  outline: 0;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.countrySelector .p-dropdown-trigger-icon {
+  color: #B6B6B6;
+}
+
+.countrySelector .p-placeholder {
+  color: #B6B6B6;
+}
