@@ -82,56 +82,62 @@
 
 .card-body-pickem {
   border-top: solid #D8303D 6px;
-  padding: 0 0.5em 0 0;
+  padding: 0 0 0 0;
   background: $color-neutral-gray3;
   min-height: 68px;
 }
 
-.card-body-dialog {
+.card-pickem .card-body-dialog {
   border-top: solid #D8303D 6px;
   background: $color-neutral-gray3;
   min-height: 68px;
 }
 
-.ui-dropdown .ui-dropdown-trigger {
+.card-pickem .ui-dropdown .ui-dropdown-trigger {
   top: 10%;
   position: absolute;
   border-radius: 50%;
   background: lightblue;
   width: 24px;
   height: 24px;
+  margin-right: 2%;
 }
 
-.primeroSpan {
+.card-pickem .p-dropdown-trigger {
+margin-right: 2%;
+}
+
+.card-pickem .primeroSpan {
   font-family: $sf-pd-bold;
   font-size: 25px;
 }
 
-.pi {
+.card-pickem .pi {
   font-size: 15px;
 }
 
-.p-dropdown {
-  width: 100%;
+.card-pickem .p-dropdown {
+  width: 100%!important;
 }
 
-.p-dropdown-trigger {
-  align-items: center;
-  display: -ms-flexbox;
-  display: flex;
+.card-pickem .p-dropdown-trigger {
   flex-shrink: 0;
-  justify-content: center;
   border-radius: 50%;
   background:  $color-neutral-white;
   width: 23px;
   height: 23px;
-  top: 10%;
+  /*top: 10%;
   position: absolute;
-  right: 0;
+  left: 100%;*/
 }
 
-.p-dropdown-label {
-  padding-left: 1em;
+.card-pickem .p-dropdown .p-component {
+  width: 100%;
+}
+
+.card-pickem .p-dropdown-label {
+  // padding-left: 1em;
+  width: 100%;
 }
 
 .foto {
@@ -143,9 +149,10 @@
 
 }
 
-.p-placeholder {
+.card-pickem .p-placeholder {
   font-family: $sf-pd-regular;
   font-size: 23px;
+  margin-left: 1em;
 }
 
 body .ui-widget-overlay {
@@ -174,9 +181,14 @@ body .ui-widget-overlay {
   background: rgb(150,150,150,0.8);
 }
 
+.card-pickem .dropdownSelector {
+  width: 100%;
+}
+
 @media (max-width: map-get($media_breakpoints, sm)) {
   .customDialog {
     width: 80%;
   }
 }
+
 

@@ -24,9 +24,10 @@
   "VR_PUBLIC_INFORMATION": "Public information",
   "VR_USERNAME": "Username",
   "VR_NATIONALITY": "Nationality",
-  "VR_PREFERRED_PRONOUNS": "Preferred pronouns",
+  "VR_PREFERRED_PRONOUNS": "Gender",
   "VR_AGREE_TEMS_USE": "I agree with Terms of Use and Privacy Policy",
   "VR_SELECT_COUNTRY_PLACEHOLDER": "Select your country...",
+  "VR_SELECT_GENDER_PLACEHOLDER": "Select your gender...",
   "VR_SELECT_COUNTRY_PRONOUNS": "Select your pronouns...",
   "VR_REQUIRED": "Required value",
   "VR_SEND": "Send",
@@ -36,5 +37,14 @@
   "VR_PICKEM_TEXT": "Match the player of each group that will pass the groups and you can win lots of prizes!",
   "VR_GRAND_FINALS": "GRAND FINALS",
   "VR_ACCEPT": "Accept",
-  "VR_INVALID_CREDENTIALS": "Credentials are not correct"
+  "VR_INVALID_CREDENTIALS": "Credentials are not correct",
+  "VR_FIRST": "1st",
+  "VR_PICKEM_SENT": "Pick'Em sent!",
+  "VR_CHECK_RESULTS_STAGES": "Keep up to date with the final results and your email to know if you go to the next phase or not!",
+  "VR_ACCOUNT_READY": "Your account is ready!",
+  "VR_MALE": "Male",
+  "VR_FEMALE": "Female",
+  "VR_OTHER": "Other",
+  "VR_PASSWORD_MISSMATCH": "Password missmatch",
+  "VR_INVALID_EMAIL": "Invalid email address"
 }

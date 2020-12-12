@@ -17,108 +17,230 @@
   <form>
     <div class="row mt-2">
       <div class="col-md-4">
-        <div class="card">
+        <div class="card card-pickem">
           <div class="card-header vr-group-header">
             <h5>
               {{'VR_GROUP' | translate}} A
             </h5>
           </div>
-          <div class="card-body card-body-pickem d-flex align-items-center">
-            <p-dropdown [options]="countries"
-                        [(ngModel)]="selectedCountry"
-                        name="group1"
-                        optionLabel="name"
-                        placeholder="Select a Country"
-                        style="width: 100%"
-                        class="align-middle">
-              <ng-template pTemplate="selectedItem">
-                <div class="h-100 mb-1">
-                  <span class="primeroSpan align-middle">
-                    1º
+          <p-dropdown [options]="countries"
+                      [(ngModel)]="selectedCountry"
+                      name="group1"
+                      optionLabel="name"
+                      placeholder="Select a Country"
+                      class="card-body card-body-pickem d-flex align-items-center align-middle">
+            <ng-template pTemplate="selectedItem">
+              <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle ml-3">
+                    {{'VR_FIRST' | translate}}
                   </span>
+                <img class="img-fluid foto align-middle"
+                     src="assets/img/fotos/juanan.png"/>
+                <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item" style="background: white">
+                <div class="h-100">
                   <img class="img-fluid foto align-middle"
                        src="assets/img/fotos/juanan.png"/>
                   <span class="nameText align-middle">
-                    {{selectedCountry.name}}
-                  </span>
-                </div>
-              </ng-template>
-              <ng-template let-country pTemplate="item">
-                <div class="country-item" style="background: white">
-                  <div class="h-100">
-                    <img class="img-fluid foto align-middle"
-                         src="assets/img/fotos/juanan.png"/>
-                    <span class="nameText align-middle">
                     {{country.value.name}}
                   </span>
-                  </div>
                 </div>
-              </ng-template>
-            </p-dropdown>
-          </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
+        <div class="card card-pickem">
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} B
           </h5>
-          <div class="card-body card-body-pickem">
-            <p class="card-text">
-              Card content
-            </p>
-          </div>
+          <p-dropdown [options]="countries"
+                      [(ngModel)]="selectedCountry"
+                      name="group2"
+                      optionLabel="name"
+                      placeholder="Select a Country"
+                      class="card-body card-body-pickem d-flex align-items-center align-middle">
+            <ng-template pTemplate="selectedItem">
+              <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle ml-3">
+                    {{'VR_FIRST' | translate}}
+                  </span>
+                <img class="img-fluid foto align-middle"
+                     src="assets/img/fotos/juanan.png"/>
+                <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item" style="background: white">
+                <div class="h-100">
+                  <img class="img-fluid foto align-middle"
+                       src="assets/img/fotos/juanan.png"/>
+                  <span class="nameText align-middle">
+                    {{country.value.name}}
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
+        <div class="card card-pickem">
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} C
           </h5>
-          <div class="card-body card-body-pickem">
-            <p class="card-text">
-              Card content
-            </p>
-          </div>
+          <p-dropdown [options]="countries"
+                      [(ngModel)]="selectedCountry"
+                      name="group3"
+                      optionLabel="name"
+                      placeholder="Select a Country"
+                      class="card-body card-body-pickem d-flex align-items-center align-middle">
+            <ng-template pTemplate="selectedItem">
+              <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle ml-3">
+                    {{'VR_FIRST' | translate}}
+                  </span>
+                <img class="img-fluid foto align-middle"
+                     src="assets/img/fotos/juanan.png"/>
+                <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item" style="background: white">
+                <div class="h-100">
+                  <img class="img-fluid foto align-middle"
+                       src="assets/img/fotos/juanan.png"/>
+                  <span class="nameText align-middle">
+                    {{country.value.name}}
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
     </div>
 
     <div class="row mt-2">
       <div class="col-md-4">
-        <div class="card">
+        <div class="card card-pickem">
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} D
           </h5>
-          <div class="card-body card-body-pickem">
-            <p class="card-text">
-              Card content
-            </p>
-          </div>
+          <p-dropdown [options]="countries"
+                      [(ngModel)]="selectedCountry"
+                      name="group4"
+                      optionLabel="name"
+                      placeholder="Select a Country"
+                      class="card-body card-body-pickem d-flex align-items-center align-middle">
+            <ng-template pTemplate="selectedItem">
+              <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle ml-3">
+                    {{'VR_FIRST' | translate}}
+                  </span>
+                <img class="img-fluid foto align-middle"
+                     src="assets/img/fotos/juanan.png"/>
+                <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item" style="background: white">
+                <div class="h-100">
+                  <img class="img-fluid foto align-middle"
+                       src="assets/img/fotos/juanan.png"/>
+                  <span class="nameText align-middle">
+                    {{country.value.name}}
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
+        <div class="card card-pickem">
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} E
           </h5>
-          <div class="card-body card-body-pickem">
-            <p class="card-text">
-              Card content
-            </p>
-          </div>
+          <p-dropdown [options]="countries"
+                      [(ngModel)]="selectedCountry"
+                      name="group5"
+                      optionLabel="name"
+                      placeholder="Select a Country"
+                      class="card-body card-body-pickem d-flex align-items-center align-middle">
+            <ng-template pTemplate="selectedItem">
+              <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle ml-3">
+                    {{'VR_FIRST' | translate}}
+                  </span>
+                <img class="img-fluid foto align-middle"
+                     src="assets/img/fotos/juanan.png"/>
+                <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item" style="background: white">
+                <div class="h-100">
+                  <img class="img-fluid foto align-middle"
+                       src="assets/img/fotos/juanan.png"/>
+                  <span class="nameText align-middle">
+                    {{country.value.name}}
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
+        <div class="card card-pickem">
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} F
           </h5>
-          <div class="card-body card-body-pickem">
-            <p class="card-text">
-              Card content
-            </p>
-          </div>
+          <p-dropdown [options]="countries"
+                      [(ngModel)]="selectedCountry"
+                      name="group6"
+                      optionLabel="name"
+                      placeholder="Select a Country"
+                      class="card-body card-body-pickem d-flex align-items-center align-middle">
+            <ng-template pTemplate="selectedItem">
+              <div class="h-100 mb-1">
+                  <span class="primeroSpan align-middle ml-3">
+                    {{'VR_FIRST' | translate}}
+                  </span>
+                <img class="img-fluid foto align-middle"
+                     src="assets/img/fotos/juanan.png"/>
+                <span class="nameText align-middle">
+                    {{selectedCountry.name}}
+                  </span>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item" style="background: white">
+                <div class="h-100">
+                  <img class="img-fluid foto align-middle"
+                       src="assets/img/fotos/juanan.png"/>
+                  <span class="nameText align-middle">
+                    {{country.value.name}}
+                  </span>
+                </div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
     </div>
@@ -140,8 +262,14 @@
     </div>
     <div class="card-body card-body-dialog pt-2 pb-2">
       <div style="text-align: center">
-        <h3 class="card-title">¡Pick'Em enviado!</h3>
-        <p class="card-text">¡Mantente al tanto de los resultados finales y de tu correo electrónico para saber si pasas o no a la siguiente fase!</p>
+        <ng-container *ngIf="!isLogged()">
+          <h3 class="card-title">
+            {{'VR_PICKEM_SENT' | translate}}
+          </h3>
+          <p class="card-text">
+            {{'VR_CHECK_RESULTS_STAGES' | translate}}
+          </p>
+        </ng-container>
       </div>
       <div class="d-flex justify-content-center mt-1">
         <button class="vr-button_secondary mr-3"

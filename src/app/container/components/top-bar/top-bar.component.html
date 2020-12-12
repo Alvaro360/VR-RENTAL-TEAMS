@@ -12,11 +12,14 @@
       </div>
     </div>
   </div>
-  <button routerLink="/login"
-          class="vr-button_secondary mr-3">
-    {{'VR_LOGIN' | translate}}
-  </button>
-  <button class="vr-button_main">
-    {{'VR_REGISTER' | translate}}
-  </button>
+  <ng-container *ngIf="!isLogged()">
+    <button routerLink="/login"
+            class="vr-button_secondary mr-3">
+      {{'VR_LOGIN' | translate}}
+    </button>
+    <button routerLink="/register"
+            class="vr-button_main">
+      {{'VR_REGISTER' | translate}}
+    </button>
+  </ng-container>
 </div>

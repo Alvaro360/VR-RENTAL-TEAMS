@@ -34,3 +34,64 @@ select:focus {
 .countrySelector .p-placeholder {
   color: #B6B6B6;
 }
+
+
+.backButton {
+  border: none;
+  background: none
+}
+
+.backButton:focus {
+  outline: none;
+}
+
+.contenedor .p-calendar .p-datepicker {
+  background: white;
+}
+
+.p-datepicker-next:focus {
+  outline: none;
+}
+
+.p-datepicker-prev:focus {
+  outline: none;
+}
+
+.p-inputtext .p-component .ng-star-inserted {
+}
+
+.p-calendar {
+  width: 100% !important;
+  background: red;
+}
+
+.p-dropdown-filter {
+  border: solid #F4F5F7;
+}
+
+.p-dropdown-filter:focus {
+  outline: none;
+}
+
+.p-dropdown-filter-icon {
+  display: none;
+}
+
+.p-dropdown-empty-message {
+  padding-top: 1em;
+  background: white;
+  font-family: $sf-pd-regular;
+}
+
+.p-calendar .p-inputtext {
+  font-family: $sf-pd-regular;
+  border: 1px solid #F4F5F7;
+  padding: 0.375rem 0.75rem;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.readySpan {
+  font-family: $sf-pd-bold;
+}

@@ -12,6 +12,7 @@ import { CheckboxInputComponent } from './components/checkbox-input/checkbox-inp
 import {DropdownModule} from 'primeng/dropdown';
 import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     DropdownModule,
+    CalendarModule
   ],
   providers: [
     {
@@ -44,7 +46,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PasswordInputComponent,
     CheckboxInputComponent,
     DropdownModule,
-    DialogModule
+    DialogModule,
+    CalendarModule
   ]
 })
 export class SharedModule { }

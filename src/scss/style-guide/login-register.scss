@@ -15,7 +15,7 @@ img {
   min-width: 100vw;
 }
 
-.card{
+.contenedor .card{
   // height: 560px;
   margin-top: auto;
   margin-bottom: auto;
@@ -25,17 +25,18 @@ img {
   background: #FCFCFC;
 }
 
-.card-footer {
+.contenedor .card-footer {
   background: none;
   border: transparent;
 }
-.card-header {
+
+.contenedor .card-header {
   background: none;
   margin-top: -4rem !important;
   border: none;
 }
 
-.card-body h3 {
+.contenedor .card-body h3 {
   font-family: $sf-pd-bold;
 }
 

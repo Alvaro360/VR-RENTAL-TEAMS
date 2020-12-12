@@ -73,6 +73,6 @@ export class LoginService {
   }
 
   isLoggedIn(): boolean {
-    return !!(sessionStorage.getItem(this.AUTHORIZATION_KEY) && sessionStorage.getItem(this.SESSION_OBJECT_KEY));
+    return !!(localStorage.getItem(this.AUTHORIZATION_KEY) && localStorage.getItem(this.SESSION_OBJECT_KEY));
   }
 }
