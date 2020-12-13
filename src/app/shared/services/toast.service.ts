@@ -14,7 +14,7 @@ export class ToastService {
   async success(message: string, title?: string, toastConfig?: ToastrConfig): Promise<void> {
     const messageTranslated = await this.translateService.get(message).toPromise();
     const titleTranslated = title && this.translateService.instant(title);
-    this.toastr.success(messageTranslated, titleTranslated, toastConfig);
+    this.toastr.success(messageTranslated, titleTranslated, {closeButton: true});
   }
 
   async error(message: string, title?: string, toastConfig?: ToastrConfig): Promise<void> {

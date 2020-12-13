@@ -1,8 +1,9 @@
-<div class="vr-check {{class}}" [class.disabled]="disabled" vrProvideParentForm>
+<div [formGroup]="parentForm" class="vr-check {{class}}" [class.disabled]="disabled">
   <label for="vr-check-{{id}}" [tabindex]="disabled ? '-1' : '0'">
     <input type="checkbox"
            id="vr-check-{{id}}"
            name="{{name}}"
+           [formControlName]="name"
            [ngModel]="model"
            (ngModelChange)="onChangeModel($event)">
     <div class="vr-check_check"></div>
@@ -12,4 +13,8 @@
           [translate]="text"
     ></span>
   </label>
+  <div *ngIf="parentForm.controls[name].errors"
+       class="invalid-feedback">
+    {{'VR_USER_REQUIERED' | translate}}
+  </div>
 </div>

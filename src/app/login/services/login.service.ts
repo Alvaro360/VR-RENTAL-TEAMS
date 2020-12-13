@@ -23,13 +23,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  signUp(): Promise<any> {
-    const user = {
-      'email': 'pruebaeeeee@gmail.com',
-      'password': 'eeeeeeee',
-      'role': ['admin'],
-      'username': 'UEEE'
-    };
+  async signUp(user: any): Promise<any> {
     const url = '/api/auth/signup';
     return this.http.post<any>(url, user).toPromise();
   }
@@ -43,21 +37,21 @@ export class LoginService {
   }
 
   logout(): void {
-    this.setAuthorization('');
-    sessionStorage.removeItem(this.SESSION_OBJECT_KEY);
+    localStorage.removeItem(this.AUTHORIZATION_KEY);
+    localStorage.removeItem(this.SESSION_OBJECT_KEY);
   }
 
   setLoggedUser(auth: VRSession) {
-    sessionStorage.setItem(this.SESSION_OBJECT_KEY, JSON.stringify(auth));
+    localStorage.setItem(this.SESSION_OBJECT_KEY, JSON.stringify(auth));
   }
 
   getLoggedUser(): VRSession {
-    return JSON.parse(sessionStorage.getItem((this.SESSION_OBJECT_KEY)));
+    return JSON.parse(localStorage.getItem((this.SESSION_OBJECT_KEY)));
   }
 
   public getAuthorization(): string {
     if (!this.authorization) {
-      this.authorization = sessionStorage.getItem(this.AUTHORIZATION_KEY);
+      this.authorization = localStorage.getItem(this.AUTHORIZATION_KEY);
     }
 
     return this.authorization;
@@ -73,6 +67,6 @@ export class LoginService {
   }
 
   isLoggedIn(): boolean {
-    return !!(localStorage.getItem(this.AUTHORIZATION_KEY) && localStorage.getItem(this.SESSION_OBJECT_KEY));
+    return !!(localStorage.getItem(this.AUTHORIZATION_KEY) && this.getLoggedUser());
   }
 }

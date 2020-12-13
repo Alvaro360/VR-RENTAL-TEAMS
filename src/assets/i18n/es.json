@@ -1,5 +1,6 @@
 {
   "VR_LOGIN": "Iniciar sesión",
+  "VR_LOGOUT": "Cerrar sesión",
   "VR_REGISTER": "Registrarse",
   "VR_WELCOME": "Bienvenido/a!",
   "VR_CREATE_ACCOUNT": "Crear cuenta",
@@ -26,7 +27,7 @@
   "VR_USERNAME": "Nombre de usuario",
   "VR_NATIONALITY": "Nacionalidad",
   "VR_PREFERRED_PRONOUNS": "Género",
-  "VR_AGREE_TEMS_USE": "Estoy de acuerdo con los Términos de uso y Política de Privacidad I agree with Terms of Use and Privacy Policy",
+  "VR_AGREE_TEMS_USE": "Acepto los Términos de uso y Política de Privacidad",
   "VR_SELECT_COUNTRY_PLACEHOLDER": "Selecciona tu país...",
   "VR_SELECT_GENDER_PLACEHOLDER": "Selecciona tu género...",
   "VR_SELECT_COUNTRY_PRONOUNS": "Selecciona tus pronombres...",
@@ -47,5 +48,10 @@
   "VR_FEMALE": "Femenino",
   "VR_OTHER": "Otro",
   "VR_PASSWORD_MISSMATCH": "Contraseña incorrecta",
-  "VR_INVALID_EMAIL": "Email inválido"
+  "VR_INVALID_EMAIL": "Email inválido",
+  "VR_PLACEHOLDER_DATE": "dd / mm / yyyy",
+  "VR_SELECT_PLAYER": "Elige a un jugador",
+  "VR_SESSION_STARTED_SUCCESSFULLY": "Sesión iniciada con éxito",
+  "REGISTER_TO_VOTE": "¡Regístrate para votar!",
+  "PICKEM_INFO": "No vamos a venderle tus datos a Elon Musk, no te preocupes. Es sólo para poder decirte que no has ganado ningún premio (o sí lol)"
 }

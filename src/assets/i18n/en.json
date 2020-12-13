@@ -1,5 +1,6 @@
 {
   "VR_LOGIN": "Log in",
+  "VR_LOGOUT": "Log out",
   "VR_REGISTER": "Register",
   "VR_WELCOME": "Welcome!",
   "VR_CREATE_ACCOUNT": "Create account",
@@ -46,5 +47,10 @@
   "VR_FEMALE": "Female",
   "VR_OTHER": "Other",
   "VR_PASSWORD_MISSMATCH": "Password missmatch",
-  "VR_INVALID_EMAIL": "Invalid email address"
+  "VR_INVALID_EMAIL": "Invalid email address",
+  "VR_PLACEHOLDER_DATE": "mm / dd / YYYY",
+  "VR_SELECT_PLAYER": "Select a player",
+  "VR_SESSION_STARTED_SUCCESSFULLY": "Session started successfully",
+  "REGISTER_TO_VOTE": "¡Register to vote!",
+  "PICKEM_INFO": "We are not selling your data to Elon Musk, don't worry. It's just so I can tell you that you haven't won any awards (or yes lol)"
 }

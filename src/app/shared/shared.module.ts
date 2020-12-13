@@ -11,8 +11,8 @@ import {PasswordInputComponent} from './components/password-input/password-input
 import { CheckboxInputComponent } from './components/checkbox-input/checkbox-input.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {DialogModule} from 'primeng/dialog';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CalendarModule} from 'primeng/calendar';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import {CalendarModule} from 'primeng/calendar';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     DropdownModule,
-    CalendarModule
+    CalendarModule,
+    OverlayPanelModule
   ],
   providers: [
     {
@@ -47,7 +48,8 @@ import {CalendarModule} from 'primeng/calendar';
     CheckboxInputComponent,
     DropdownModule,
     DialogModule,
-    CalendarModule
+    CalendarModule,
+    OverlayPanelModule
   ]
 })
 export class SharedModule { }

@@ -23,31 +23,31 @@
               {{'VR_GROUP' | translate}} A
             </h5>
           </div>
-          <p-dropdown [options]="countries"
-                      [(ngModel)]="selectedCountry"
+          <p-dropdown [options]="groupA"
+                      [(ngModel)]="selectedPlayerGroupA"
                       name="group1"
-                      optionLabel="name"
-                      placeholder="Select a Country"
+                      optionLabel="firstName"
+                      placeholder="{{'VR_SELECT_PLAYER' | translate}}"
                       class="card-body card-body-pickem d-flex align-items-center align-middle">
             <ng-template pTemplate="selectedItem">
               <div class="h-100 mb-1">
                   <span class="primeroSpan align-middle ml-3">
                     {{'VR_FIRST' | translate}}
                   </span>
-                <img class="img-fluid foto align-middle"
-                     src="assets/img/fotos/juanan.png"/>
+                <!--<img class="img-fluid foto align-middle"
+                     [src]="images[selectedPlayerGroupA.id]"/>-->
                 <span class="nameText align-middle">
-                    {{selectedCountry.name}}
+                    {{selectedPlayerGroupA.firstName+" "+selectedPlayerGroupA.lastName}}
                   </span>
               </div>
             </ng-template>
-            <ng-template let-country pTemplate="item">
-              <div class="country-item" style="background: white">
+            <ng-template let-player pTemplate="item">
+              <div class="player-item" style="background: white">
                 <div class="h-100">
-                  <img class="img-fluid foto align-middle"
-                       src="assets/img/fotos/juanan.png"/>
+                  <!--<img class="img-fluid foto align-middle"
+                       [src]="images[player.value.id]"/>-->
                   <span class="nameText align-middle">
-                    {{country.value.name}}
+                    {{player.value.firstName+" "+player.value.lastName}}
                   </span>
                 </div>
               </div>
@@ -60,11 +60,11 @@
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} B
           </h5>
-          <p-dropdown [options]="countries"
-                      [(ngModel)]="selectedCountry"
+          <p-dropdown [options]="groupB"
+                      [(ngModel)]="selectedPlayerGroupB"
                       name="group2"
-                      optionLabel="name"
-                      placeholder="Select a Country"
+                      optionLabel="firstName"
+                      placeholder="{{'VR_SELECT_PLAYER' | translate}}"
                       class="card-body card-body-pickem d-flex align-items-center align-middle">
             <ng-template pTemplate="selectedItem">
               <div class="h-100 mb-1">
@@ -72,19 +72,19 @@
                     {{'VR_FIRST' | translate}}
                   </span>
                 <img class="img-fluid foto align-middle"
-                     src="assets/img/fotos/juanan.png"/>
+                     [src]="images[selectedPlayerGroupB.id]"/>
                 <span class="nameText align-middle">
-                    {{selectedCountry.name}}
+                    {{selectedPlayerGroupB.firstName+" "+selectedPlayerGroupB.lastName}}
                   </span>
               </div>
             </ng-template>
-            <ng-template let-country pTemplate="item">
+            <ng-template let-player pTemplate="item">
               <div class="country-item" style="background: white">
                 <div class="h-100">
                   <img class="img-fluid foto align-middle"
-                       src="assets/img/fotos/juanan.png"/>
+                       [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
-                    {{country.value.name}}
+                    {{player.value.firstName+" "+player.value.lastName}}
                   </span>
                 </div>
               </div>
@@ -97,11 +97,11 @@
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} C
           </h5>
-          <p-dropdown [options]="countries"
-                      [(ngModel)]="selectedCountry"
+          <p-dropdown [options]="groupC"
+                      [(ngModel)]="selectedPlayerGroupC"
                       name="group3"
-                      optionLabel="name"
-                      placeholder="Select a Country"
+                      optionLabel="firstName"
+                      placeholder="{{'VR_SELECT_PLAYER' | translate}}"
                       class="card-body card-body-pickem d-flex align-items-center align-middle">
             <ng-template pTemplate="selectedItem">
               <div class="h-100 mb-1">
@@ -109,19 +109,19 @@
                     {{'VR_FIRST' | translate}}
                   </span>
                 <img class="img-fluid foto align-middle"
-                     src="assets/img/fotos/juanan.png"/>
+                     [src]="images[selectedPlayerGroupC.id]"/>
                 <span class="nameText align-middle">
-                    {{selectedCountry.name}}
+                    {{selectedPlayerGroupC.firstName+" "+selectedPlayerGroupC.lastName}}
                   </span>
               </div>
             </ng-template>
-            <ng-template let-country pTemplate="item">
+            <ng-template let-player pTemplate="item">
               <div class="country-item" style="background: white">
                 <div class="h-100">
                   <img class="img-fluid foto align-middle"
-                       src="assets/img/fotos/juanan.png"/>
+                       [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
-                    {{country.value.name}}
+                    {{player.value.firstName+" "+player.value.lastName}}
                   </span>
                 </div>
               </div>
@@ -137,11 +137,11 @@
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} D
           </h5>
-          <p-dropdown [options]="countries"
-                      [(ngModel)]="selectedCountry"
+          <p-dropdown [options]="groupD"
+                      [(ngModel)]="selectedPlayerGroupD"
                       name="group4"
-                      optionLabel="name"
-                      placeholder="Select a Country"
+                      optionLabel="firstName"
+                      placeholder="{{'VR_SELECT_PLAYER' | translate}}"
                       class="card-body card-body-pickem d-flex align-items-center align-middle">
             <ng-template pTemplate="selectedItem">
               <div class="h-100 mb-1">
@@ -149,19 +149,19 @@
                     {{'VR_FIRST' | translate}}
                   </span>
                 <img class="img-fluid foto align-middle"
-                     src="assets/img/fotos/juanan.png"/>
+                     [src]="images[selectedPlayerGroupD.id]"/>
                 <span class="nameText align-middle">
-                    {{selectedCountry.name}}
+                    {{selectedPlayerGroupD.firstName+" "+selectedPlayerGroupD.lastName}}
                   </span>
               </div>
             </ng-template>
-            <ng-template let-country pTemplate="item">
+            <ng-template let-player pTemplate="item">
               <div class="country-item" style="background: white">
                 <div class="h-100">
                   <img class="img-fluid foto align-middle"
-                       src="assets/img/fotos/juanan.png"/>
+                       [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
-                    {{country.value.name}}
+                    {{player.value.firstName+" "+player.value.lastName}}
                   </span>
                 </div>
               </div>
@@ -174,11 +174,11 @@
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} E
           </h5>
-          <p-dropdown [options]="countries"
-                      [(ngModel)]="selectedCountry"
+          <p-dropdown [options]="groupE"
+                      [(ngModel)]="selectedPlayerGroupE"
                       name="group5"
-                      optionLabel="name"
-                      placeholder="Select a Country"
+                      optionLabel="firstName"
+                      placeholder="{{'VR_SELECT_PLAYER' | translate}}"
                       class="card-body card-body-pickem d-flex align-items-center align-middle">
             <ng-template pTemplate="selectedItem">
               <div class="h-100 mb-1">
@@ -186,19 +186,19 @@
                     {{'VR_FIRST' | translate}}
                   </span>
                 <img class="img-fluid foto align-middle"
-                     src="assets/img/fotos/juanan.png"/>
+                     [src]="images[selectedPlayerGroupE.id]"/>
                 <span class="nameText align-middle">
-                    {{selectedCountry.name}}
+                    {{selectedPlayerGroupE.firstName+" "+selectedPlayerGroupE.lastName}}
                   </span>
               </div>
             </ng-template>
-            <ng-template let-country pTemplate="item">
+            <ng-template let-player pTemplate="item">
               <div class="country-item" style="background: white">
                 <div class="h-100">
                   <img class="img-fluid foto align-middle"
-                       src="assets/img/fotos/juanan.png"/>
+                       [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
-                    {{country.value.name}}
+                    {{player.value.firstName+" "+player.value.lastName}}
                   </span>
                 </div>
               </div>
@@ -211,11 +211,11 @@
           <h5 class="card-header vr-group-header">
             {{'VR_GROUP' | translate}} F
           </h5>
-          <p-dropdown [options]="countries"
-                      [(ngModel)]="selectedCountry"
+          <p-dropdown [options]="groupF"
+                      [(ngModel)]="selectedPlayerGroupF"
                       name="group6"
-                      optionLabel="name"
-                      placeholder="Select a Country"
+                      optionLabel="firstName"
+                      placeholder="{{'VR_SELECT_PLAYER' | translate}}"
                       class="card-body card-body-pickem d-flex align-items-center align-middle">
             <ng-template pTemplate="selectedItem">
               <div class="h-100 mb-1">
@@ -223,17 +223,17 @@
                     {{'VR_FIRST' | translate}}
                   </span>
                 <img class="img-fluid foto align-middle"
-                     src="assets/img/fotos/juanan.png"/>
+                     [src]="images[selectedPlayerGroupF.id]"/>
                 <span class="nameText align-middle">
-                    {{selectedCountry.name}}
+                    {{selectedPlayerGroupF.firstName+" "+selectedPlayerGroupF.lastName}}
                   </span>
               </div>
             </ng-template>
-            <ng-template let-country pTemplate="item">
+            <ng-template let-player pTemplate="item">
               <div class="country-item" style="background: white">
                 <div class="h-100">
                   <img class="img-fluid foto align-middle"
-                       src="assets/img/fotos/juanan.png"/>
+                       [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
                     {{country.value.name}}
                   </span>
@@ -262,7 +262,7 @@
     </div>
     <div class="card-body card-body-dialog pt-2 pb-2">
       <div style="text-align: center">
-        <ng-container *ngIf="!isLogged()">
+        <ng-container *ngIf="isLogged(); else noLoged">
           <h3 class="card-title">
             {{'VR_PICKEM_SENT' | translate}}
           </h3>
@@ -270,6 +270,14 @@
             {{'VR_CHECK_RESULTS_STAGES' | translate}}
           </p>
         </ng-container>
+        <ng-template #noLoged>
+          <h3 class="card-title">
+            {{'REGISTER_TO_VOTE' | translate}}
+          </h3>
+          <p class="card-text">
+            {{'PICKEM_INFO' | translate}}
+          </p>
+        </ng-template>
       </div>
       <div class="d-flex justify-content-center mt-1">
         <button class="vr-button_secondary mr-3"

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter, HostListener} from '@angular/core';
 import {keyboardKeys} from '@modules/core/constants/keyboard-keys.constants';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox-input',
@@ -14,6 +15,7 @@ export class CheckboxInputComponent {
   @Input() model: any;
   @Output() modelChange = new EventEmitter<any>();
   @Input() disabled: boolean;
+  @Input() parentForm: FormGroup;
   private _checked;
 
   constructor() {

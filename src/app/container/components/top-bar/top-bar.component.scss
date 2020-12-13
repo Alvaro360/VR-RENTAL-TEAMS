@@ -18,3 +18,37 @@
   font-family: $sf-pd-regular;
   font-size: 35px;
 }
+
+.sub {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.username{
+  font-family: $sf-pd-bold;
+}
+
+.fullName {
+  font-family: $sf-pd-regular;
+}
+
+.p-overlaypanel {
+  margin-right: 5%;
+  position: absolute;
+  color: $color-neutral-white;
+  background: $color-neutral-darkblack;
+  width: 264px;
+  height: 175px;
+  padding: 1.5em 1.5em 0;
+  border-radius: 2em;
+  margin-top: -2.5em;
+}
+
+.logout {
+  color: $color-primary-vr-2;
+  font-size: 12px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

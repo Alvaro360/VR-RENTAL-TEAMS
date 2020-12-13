@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-end mr-5">
+<div class="d-flex justify-content-end mr-2">
   <div class="mr-auto d-flex justify-content-start">
     <!--<img class="img-fluid" src="assets/img/logo-vr.png">-->
     <div class="row">
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <ng-container *ngIf="!isLogged()">
+  <ng-container *ngIf="!isLogged(); else user">
     <button routerLink="/login"
             class="vr-button_secondary mr-3">
       {{'VR_LOGIN' | translate}}
@@ -22,4 +22,74 @@
       {{'VR_REGISTER' | translate}}
     </button>
   </ng-container>
+  <ng-template #user>
+    <div class="d-flex align-items-start">
+      <div class="row">
+        <div class="col-6"  style="width: 170px">
+          <div class="row mt-2">
+            <span class="flag-icon flag-icon-es mr-2"></span>
+            <span class="username">
+              Yanguas
+            </span>
+          </div>
+          <div class="row">
+            <span class="fullName">
+              Rubén Yanguas
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <img class="img-fluid sub clearfix"
+                 src="assets/img/sub.png"/>
+          </div>
+          <div class="row d-flex justify-content-start">
+            <span class="logout" (click)="logout()">
+              <i class="pi pi-sign-out"></i>
+              {{'VR_LOGOUT' | translate}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      (click)="op.toggle($event)"
+      <p-overlayPanel [showTransitionOptions]="'0ms'"
+                      [hideTransitionOptions]="'0ms'"
+                      #op>
+        <ng-template pTemplate>
+          <div class="d-flex align-items-start">
+            <div class="col-8">
+              <div class="row mt-2">
+                <span class="flag-icon flag-icon-es mr-2"></span>
+                <span class="username">
+            Yanguas
+          </span>
+              </div>
+              <div class="row">
+          <span class="fullName">
+            Rubén Yanguas
+          </span>
+              </div>
+              <div class="row">
+          <span class="fullName">
+            Logout
+          </span>
+              </div>
+            </div>
+            <div class="col-4">
+              <img class="img-fluid sub clearfix"
+                   src="assets/img/sub.png"
+                   (click)="op.toggle($event)"/>
+            </div>
+          </div>
+          <div class="mr-auto d-flex justify-content-center mt-2">
+            <button class="vr-button_main">
+              {{'VR_LOGOUT' | translate}}
+            </button>
+          </div>
+        </ng-template>
+      </p-overlayPanel>-->
+    </div>
+  </ng-template>
 </div>

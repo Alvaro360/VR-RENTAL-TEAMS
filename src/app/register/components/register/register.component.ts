@@ -7,6 +7,20 @@ import {I18nService} from '@modules/core/services/i18n.service';
 import {COUNTRIES} from '@constants/contries.constants';
 import {TranslateService} from '@ngx-translate/core';
 import {genders} from '@modules/core/constants/gender.constants';
+import {ToastService} from '@services/toast.service';
+
+class UserRegister {
+  birthdate: number;
+  countryOfResidence: string;
+  email: string;
+  firstName: string;
+  gender: string;
+  lastName: string;
+  nationality: string;
+  password: string;
+  role: string[];
+  username: string;
+}
 
 @Component({
   selector: 'app-register',
@@ -42,12 +56,14 @@ export class RegisterComponent implements OnInit {
   pronoun: any;
   genders = genders;
   selectedGender: any;
+  aceptTerms: boolean;
 
   constructor(private loginService: LoginService,
               private router: Router,
               private formBuilder: FormBuilder,
               private i18nService: I18nService,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              private toast: ToastService) {
     this.languages = [
       {name: 'Español', code: 'es'},
       {name: 'English', code: 'us'}
@@ -76,7 +92,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm2 = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      birthday: [new Date(), Validators.required],
+      birthday: [null, Validators.required],
       countryResidence: ['', Validators.required],
     });
 
@@ -84,6 +100,7 @@ export class RegisterComponent implements OnInit {
       username: ['', Validators.required],
       nationality: ['', Validators.required],
       pronoun: ['', Validators.required],
+      agree: [null, Validators.requiredTrue]
     });
 
     this.f1Visible = true;
@@ -157,7 +174,7 @@ export class RegisterComponent implements OnInit {
     this.f3Visible = true;
   }
 
-  onSubmitF3(): void {
+  async onSubmitF3(): Promise<void> {
     this.submitted = true;
     if (this.registerForm3.invalid) {
       return;
@@ -169,9 +186,31 @@ export class RegisterComponent implements OnInit {
 
     this.submitted = false;
     this.f3Visible = false;
+
+    const user = new UserRegister();
+    user.birthdate = this.parseDateToMs(this.birthday);
+    user.countryOfResidence = this.countryResidence.code;
+    user.email = this.email;
+    user.firstName = this.firstName;
+    user.gender = this.selectedGender.value;
+    user.lastName = this.lastName;
+    user.nationality = this.nationality.code;
+    user.password  = this.password;
+    user.role = ['user'];
+    user.username = this.username
+
+    await this.loginService.signUp(user);
+
     this.confirmVisible = true;
   }
 
+  parseDateToMs(date: Date): number {
+    if (!date) {
+      return;
+    }
+
+    return date.getTime();
+  }
   onCancelRegister(): void {
     this.router.navigate(['login']);
   }
@@ -184,8 +223,10 @@ export class RegisterComponent implements OnInit {
     this.fieldTextType = !this.fieldTextType;
   }
 
-  login(): void {
-
+  async login(): Promise<void> {
+    await this.loginService.login(this.username, this.password);
+    this.router.navigate(['main']);
+    this.toast.success('VR_SESSION_STARTED_SUCCESSFULLY');
   }
 
   back(): void {
