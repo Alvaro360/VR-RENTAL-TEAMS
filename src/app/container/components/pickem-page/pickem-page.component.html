@@ -1,3 +1,4 @@
+<ng-container *ngIf="isDataAvailable">
 <div class="container">
   <div>
     <div class="row d-flex justify-content-center">
@@ -34,8 +35,8 @@
                   <span class="primeroSpan align-middle ml-3">
                     {{'VR_FIRST' | translate}}
                   </span>
-                <!--<img class="img-fluid foto align-middle"
-                     [src]="images[selectedPlayerGroupA.id]"/>-->
+                <img class="img-fluid foto align-middle"
+                     [src]="images[selectedPlayerGroupA.id]"/>
                 <span class="nameText align-middle">
                     {{selectedPlayerGroupA.firstName+" "+selectedPlayerGroupA.lastName}}
                   </span>
@@ -44,8 +45,8 @@
             <ng-template let-player pTemplate="item">
               <div class="player-item" style="background: white">
                 <div class="h-100">
-                  <!--<img class="img-fluid foto align-middle"
-                       [src]="images[player.value.id]"/>-->
+                  <img class="img-fluid foto align-middle"
+                       [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
                     {{player.value.firstName+" "+player.value.lastName}}
                   </span>
@@ -252,6 +253,7 @@
     </div>
   </form>
 </div>
+</ng-container>
 
 <p-dialog [(visible)]="dialogVisible"
           modal="true"

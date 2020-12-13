@@ -26,8 +26,8 @@ export class PickemPageComponent implements OnInit {
   selectedPlayerGroupE: Player;
   selectedPlayerGroupF: Player;
   images = {};
+  isDataAvailable = false;
 
-  selectedCountry: any;
   dialogVisible = false;
 
   constructor(private router: Router,
@@ -69,7 +69,9 @@ export class PickemPageComponent implements OnInit {
 
   ngOnInit(): void {
     // document.getElementById('loading').style.display = 'none';
-    this.buildGroups();
+    this.isDataAvailable = false;
+    this.buildGroups().then(() =>
+    this.isDataAvailable = true);
     console.log(this.groupA);
   }
 
