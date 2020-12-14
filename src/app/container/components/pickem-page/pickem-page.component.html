@@ -1,8 +1,8 @@
-<ng-container *ngIf="isDataAvailable">
+<ng-container *ngIf="isDataAvailable; else spinner">
 <div class="container">
   <div>
     <div class="row d-flex justify-content-center">
-      <button routerLink="/login" class="vr-button_secondary mr-3">
+      <button class="vr-button_secondary mr-3">
         {{'VR_GROUP_STAGE' | translate}}
       </button>
       <button class="vr-button_main">
@@ -236,7 +236,7 @@
                   <img class="img-fluid foto align-middle"
                        [src]="images[player.value.id]"/>
                   <span class="nameText align-middle">
-                    {{country.value.name}}
+                    {{player.value.firstName+" "+player.value.lastName}}
                   </span>
                 </div>
               </div>
@@ -254,6 +254,38 @@
   </form>
 </div>
 </ng-container>
+<ng-template #spinner>
+  <div class="container">
+    <div>
+      <div class="row d-flex justify-content-center">
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
 
 <p-dialog [(visible)]="dialogVisible"
           modal="true"

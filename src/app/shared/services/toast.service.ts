@@ -14,25 +14,25 @@ export class ToastService {
   async success(message: string, title?: string, toastConfig?: ToastrConfig): Promise<void> {
     const messageTranslated = await this.translateService.get(message).toPromise();
     const titleTranslated = title && this.translateService.instant(title);
-    this.toastr.success(messageTranslated, titleTranslated, {closeButton: true});
+    this.toastr.success(messageTranslated, titleTranslated, {closeButton: true, timeOut: 2000});
   }
 
   async error(message: string, title?: string, toastConfig?: ToastrConfig): Promise<void> {
     const messageTranslated = await this.translateService.get(message).toPromise();
     const titleTranslated = title && this.translateService.instant(title);
-    this.toastr.error(messageTranslated, titleTranslated, toastConfig);
+    this.toastr.error(messageTranslated, titleTranslated, {closeButton: true, timeOut: 2000});
   }
 
   async info(message: string, title?: string, toastConfig?: ToastrConfig): Promise<void> {
     const messageTranslated = await this.translateService.get(message).toPromise();
     const titleTranslated = title && this.translateService.instant(title);
-    this.toastr.info(messageTranslated, titleTranslated, toastConfig);
+    this.toastr.info(messageTranslated, titleTranslated, {closeButton: true, timeOut: 2000});
   }
 
   async warning(message: string, title?: string, toastConfig?: ToastrConfig): Promise<void> {
     const messageTranslated = await this.translateService.get(message).toPromise();
     const titleTranslated = title && this.translateService.instant(title);
-    this.toastr.warning(messageTranslated, titleTranslated, toastConfig);
+    this.toastr.warning(messageTranslated, titleTranslated, {closeButton: true, timeOut: 2000});
   }
 
 }

@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
       this.selectedLanguage =  {name: 'English', code: 'us'};
     }
 
-    console.log(this.loginService.isLoggedIn());
     if (this.loginService.isLoggedIn()) {
       this.router.navigate(['main']);
     }

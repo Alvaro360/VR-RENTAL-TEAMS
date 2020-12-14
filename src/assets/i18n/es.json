@@ -37,7 +37,7 @@
   "VR_PLAY_OFFS": "Play-offs",
   "VR_GROUP_STAGE": "Fase de grupos",
   "VR_PICKEM_TEXT": "¡Acierta el jugador de cada grupo que pasará de grupos y podrás ganar cantidad de premios!",
-  "VR_GRAND_FINALS": "GRANDES FINALES",
+  "VR_GRAND_FINALS": "GRAN FINAL NACIONAL",
   "VR_ACCEPT": "Aceptar",
   "VR_INVALID_CREDENTIALS": "Las credenciales no son correctas",
   "VR_FIRST": "1º",
@@ -53,5 +53,6 @@
   "VR_SELECT_PLAYER": "Elige a un jugador",
   "VR_SESSION_STARTED_SUCCESSFULLY": "Sesión iniciada con éxito",
   "REGISTER_TO_VOTE": "¡Regístrate para votar!",
-  "PICKEM_INFO": "No vamos a venderle tus datos a Elon Musk, no te preocupes. Es sólo para poder decirte que no has ganado ningún premio (o sí lol)"
+  "PICKEM_INFO": "No vamos a venderle tus datos a Elon Musk, no te preocupes. Es sólo para poder decirte que no has ganado ningún premio (o sí lol)",
+  "VR_PLAYERS_MISSING": "Faltan jugadores por seleccionar"
 }

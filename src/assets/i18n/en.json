@@ -52,5 +52,6 @@
   "VR_SELECT_PLAYER": "Select a player",
   "VR_SESSION_STARTED_SUCCESSFULLY": "Session started successfully",
   "REGISTER_TO_VOTE": "¡Register to vote!",
-  "PICKEM_INFO": "We are not selling your data to Elon Musk, don't worry. It's just so I can tell you that you haven't won any awards (or yes lol)"
+  "PICKEM_INFO": "We are not selling your data to Elon Musk, don't worry. It's just so I can tell you that you haven't won any awards (or yes lol)",
+  "VR_PLAYERS_MISSING": "Players are missing to be selected"
 }

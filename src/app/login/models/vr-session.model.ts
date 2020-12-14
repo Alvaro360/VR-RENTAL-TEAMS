@@ -5,4 +5,7 @@ export class VRSession {
   roles: string[];
   tokenType: string
   accessToken: string;
+  firstName: string;
+  lastName: string;
+  nationality: string;
 }

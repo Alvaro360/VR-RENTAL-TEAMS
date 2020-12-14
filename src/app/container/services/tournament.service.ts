@@ -25,4 +25,14 @@ export class TournamentService {
     const url = `/api/public/player/${id}/picture`;
     return this.http.get<Blob>(url, {responseType: 'blob' as 'json'}).toPromise();
   }
+
+  submitPickem(pickem: any): Promise<any> {
+    const url = `/api/pickem`;
+    return this.http.post(url, pickem).toPromise();
+  }
+
+  getPickemByPlayer(tourId: number, playerId): Promise<any> {
+    const url = `/api/pickem?userId=${playerId}&tournamentId=${tourId}`;
+    return this.http.get<any>(url).toPromise();
+  }
 }

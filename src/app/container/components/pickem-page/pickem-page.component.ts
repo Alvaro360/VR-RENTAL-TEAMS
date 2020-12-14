@@ -4,6 +4,8 @@ import {ToastrService} from 'ngx-toastr';
 import {LoginService} from '@modules/login/services/login.service';
 import {Player} from '@modules/container/models/player.model';
 import {TournamentService} from '@modules/container/services/tournament.service';
+import {VRSession} from '@modules/login/models/vr-session.model';
+import {ToastService} from '@services/toast.service';
 
 @Component({
   selector: 'app-pickem-page',
@@ -12,7 +14,6 @@ import {TournamentService} from '@modules/container/services/tournament.service'
   encapsulation: ViewEncapsulation.None
 })
 export class PickemPageComponent implements OnInit {
-  countries: any[];
   groupA: Player[] = [];
   groupB: Player[] = [];
   groupC: Player[] = [];
@@ -27,21 +28,18 @@ export class PickemPageComponent implements OnInit {
   selectedPlayerGroupF: Player;
   images = {};
   isDataAvailable = false;
-
   dialogVisible = false;
+  userSession: VRSession;
 
   constructor(private router: Router,
-              private toastr: ToastrService,
+              private toast: ToastService,
               private loginService: LoginService,
               private tournamentService: TournamentService) {
-    this.countries = [
-      {name: 'Guillermo Castilla', code: 'AU'},
-      {name: 'Antonio Cano', code: 'BR'},
-      {name: 'Rubén Yanguas', code: 'CN'},
-      {name: 'Álvaro Buedo', code: 'CN'},
-    ];
-    this.dialogVisible = false;
 
+    this.userSession = this.loginService.getLoggedUser();
+    this.dialogVisible = false;
+    this.isDataAvailable = false;
+    this.buildGroups().then(() => this.isDataAvailable = true);
   }
 
  async buildGroups(): Promise<void> {
@@ -65,21 +63,72 @@ export class PickemPageComponent implements OnInit {
 
       this.createImageFromBlob(await this.tournamentService.getPlayerPic(playerId), playerId);
     }
+
+   let pickem;
+   try {
+     pickem = await this.tournamentService.getPickemByPlayer(parseInt(tour.id, 10), this.userSession.id);
+     for (const [key, value] of Object.entries(pickem.stages[0].selections)) {
+       const playerId = value as unknown as number;
+       switch (key) {
+         case 'GRUPOS-A-1':
+           this.selectedPlayerGroupA = await this.tournamentService.getPlayerById(playerId);
+           break;
+         case 'GRUPOS-B-1':
+           this.selectedPlayerGroupB = await this.tournamentService.getPlayerById(playerId);
+           break;
+         case 'GRUPOS-C-1':
+           this.selectedPlayerGroupC = await this.tournamentService.getPlayerById(playerId);
+           break;
+         case 'GRUPOS-D-1':
+           this.selectedPlayerGroupD = await this.tournamentService.getPlayerById(playerId);
+           break;
+         case 'GRUPOS-E-1':
+           this.selectedPlayerGroupE = await this.tournamentService.getPlayerById(playerId);
+           break;
+         default:
+           this.selectedPlayerGroupF = await this.tournamentService.getPlayerById(playerId);
+           break;
+       }
+     }
+   } catch (e) {
+     this.selectedPlayerGroupA = null;
+     this.selectedPlayerGroupB = null;
+     this.selectedPlayerGroupC = null;
+     this.selectedPlayerGroupD = null;
+     this.selectedPlayerGroupE = null;
+     this.selectedPlayerGroupF = null;
+   }
+
   }
 
   ngOnInit(): void {
-    // document.getElementById('loading').style.display = 'none';
-    this.isDataAvailable = false;
-    this.buildGroups().then(() =>
-    this.isDataAvailable = true);
-    console.log(this.groupA);
+
   }
 
-  sendPickEm(): void {
-    this.dialogVisible = true;
+  async sendPickEm(): Promise<void> {
+    if (this.isLogged() && (!this.selectedPlayerGroupA || !this.selectedPlayerGroupB || !this.selectedPlayerGroupC || !this.selectedPlayerGroupD || !this.selectedPlayerGroupF || !this.selectedPlayerGroupE)) {
+      this.toast.error('VR_PLAYERS_MISSING');
+     return;
+    }
 
+    this.dialogVisible = true;
     if (this.isLogged()) {
-      this.toastr.success('Hello world!', 'Toastr fun!');
+      const pickem = {};
+      pickem['owner'] = this.userSession.id;
+      pickem['tournamentId'] = 1;
+      const stages = [{
+        'selections' : {
+          'GRUPOS-A-1': this.selectedPlayerGroupA.id,
+          'GRUPOS-B-1': this.selectedPlayerGroupB.id,
+          'GRUPOS-C-1': this.selectedPlayerGroupC.id,
+          'GRUPOS-D-1': this.selectedPlayerGroupD.id,
+          'GRUPOS-E-1': this.selectedPlayerGroupE.id,
+          'GRUPOS-F-1': this.selectedPlayerGroupF.id,
+        },
+        'stageName': 'GRUPOS'
+      }];
+      pickem['stages'] = stages;
+      this.tournamentService.submitPickem(pickem);
     }
   }
 

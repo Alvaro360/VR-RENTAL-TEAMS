@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {LoginService} from '@modules/login/services/login.service';
 import {Router} from '@angular/router';
+import {VRSession} from '@modules/login/models/vr-session.model';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,10 +10,15 @@ import {Router} from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class TopBarComponent implements OnInit {
+  userSession: VRSession;
+
   constructor(private loginService: LoginService,
               private router: Router) { }
 
   ngOnInit(): void {
+    if (this.isLogged()) {
+      this.userSession = this.loginService.getLoggedUser();
+    }
   }
 
   logout(): void {
